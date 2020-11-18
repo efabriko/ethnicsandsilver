@@ -1,0 +1,23 @@
+
+html {
+  height: 100%
+}
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+  }
+
+footer hr {
+    margin-top: 0rem;
+    margin-bottom: 0rem;
+  }
+
+footer p {
+  font-size: 0.80em;
+}
