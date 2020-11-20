@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :products
   # Below line will map any request to get the about page to the about action of the simple_pages controller
   get 'simple_pages/about'
   get 'simple_pages/contact'
