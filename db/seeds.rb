@@ -11,8 +11,8 @@
 products = Product.create([
   { name: "Bracelet", description: "Nice bracelet 1", image_url: "products-img/bracelet_1.jpg" },
   { name: "Bracelet", description: "Nice bracelet 2", image_url: "products-img/bracelet_2.jpg" },
-  { name: "Earrings", description: "Nice Earrings 1", image_url: "products-img/errings_1.jpg" },
-  { name: "Earrings", description: "Nice Earrings 2", image_url: "products-img/errings_2.jpg" },
+  { name: "Earrings", description: "Nice Earrings 1", image_url: "products-img/earrings_1.jpg" },
+  { name: "Earrings", description: "Nice Earrings 2", image_url: "products-img/earrings_2.jpg" },
   { name: "Necklace", description: "Nice necklace 1", image_url: "products-img/necklace_1.jpg" },
   { name: "Necklace", description: "Nice necklace 2", image_url: "products-img/necklace_2.jpg" },
   { name: "Necklace", description: "Nice necklace 3", image_url: "products-img/necklace_3.jpg" },
