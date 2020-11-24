@@ -5,8 +5,39 @@
 		<h1>Featured product:</h1>
 	</header>
 
-	<div>
-		<p><%= @featured_product.name %></p>
-	</div>
+  <div class="row">
+    <div class="col-md-6 offset-md-3">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        
+        <ol class="carousel-indicators">
+          <% @products.each do |product| %>
+            <% i=0 %>
+            <li data-target="#carouselExampleIndicators" data-slide-to="<% i=0 %>" class=<%= "active" if product == @products.first %>>
+          <% end %>
+        </ol>
+
+        <div class="carousel-inner">
+          <% @products.each do |product| %>
+          <div class="carousel-item<%= " active" if product == @products.first %>">
+            <%= image_tag(product.image_url, class: "d-block img-fluid tales") %>
+
+            <div class="carousel-caption d-none d-md-block">
+              <%= product.name %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>
+    </div>
+  </div>
 
 </section>
