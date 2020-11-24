@@ -3,11 +3,32 @@
 
   <header>
 		<h1>Order</h1>
-    <h2>Ethnics & Silver, your source to crafted silver jewels.</h2>
+    <h2>Order information:</h2>
 	</header>
 
-	<div>
-		<p></p>
-	</div>
+  <div class="container-fluid">
+    <div class="row">
+
+      <div class="col-sm-12">
+        <p>
+          <strong>Order ID:</strong> <%= @order.id %>
+        </p>
+        <p>
+          <strong>Product name:</strong> <%= @order.product.name %>
+        </p>
+        <p>
+          <strong>Product description:</strong> <%= @order.product.description %>
+        </p>
+        <p>
+          <%= image_tag(@order.product.image_url, class: "img-fluid img-thumbnail max-width: 25%") unless @order.product.image_url.nil? %>
+        </p>
+        <p>
+          <strong>Product price: <%= @order.total %> Euros</strong>
+        </p>
+      </div>
+
+    </div><!-- end row -->
+
+  </div><!-- end conatiner-fluid -->
 
 </section>
