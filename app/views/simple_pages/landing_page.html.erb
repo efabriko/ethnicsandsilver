@@ -5,10 +5,15 @@
 		<h1>Featured product:</h1>
 	</header>
 
+  <div>
+    <p>Test of Params using Rails</p>
+    <h1><%= params[:test_key] %></h1>
+  </div>
+
   <div class="row">
     <div class="col-md-6 offset-md-3">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        
+
         <ol class="carousel-indicators">
           <% @products.each do |product| %>
             <% i=0 %>
