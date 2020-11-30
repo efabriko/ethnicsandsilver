@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   # Thanks to this routes.rb and below line, Rails will map requests to the root of the App to the to the landing_page action of the simple_pages controller
   root 'simple_pages#landing_page'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+  post 'simple_pages/thank_you'
 end

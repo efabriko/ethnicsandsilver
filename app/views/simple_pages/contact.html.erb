@@ -1,5 +1,5 @@
 <!-- contact section starts here -->
-<section class="container">
+<!-- <section class="container">
 
   <header>
 		<h1>Contact us</h1>
@@ -11,4 +11,39 @@
     <p>email: hello@ethnicsandsilver.com
 	</div>
 
-</section>
+</section> -->
+
+
+<!-- contact section starts here -->
+<section class="container" id="contact">
+
+  <header>
+    <h1>Contact us</h1>
+  </header>
+
+  <%= flash[:notice] %>
+
+  <%= form_with(url:"/simple_pages/thank_you", method: "post", local: true) do |form| %>
+  <div class="row">
+    <div class="form-group col-lg-8">
+      <%= form.label :name %>
+      <%= form.text_field :name, class: "form-control", placeholder: "Enter Name" %>
+    </div>
+    <div class="form-group col-lg-8">
+      <%= form.label :email %>
+      <%= form.text_field :email, class: "form-control", placeholder: "Enter Email" %>
+    </div>
+    <div class="form-group col-lg-8">
+      <%= form.label :message %>
+      <%= form.text_area :message, class: "form-control", placeholder: "Enter Message", rows: 5 %>
+    </div>
+  </div>
+  <%= form.submit "Send", class: "form_label" %>
+  <% end %>
+
+
+
+
+
+
+</section> <!-- end container contact section -->
