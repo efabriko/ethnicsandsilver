@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :users, path: '', path_names: { sign_in: 'login', sign_out: 'logout' }
+  resources :users
   resources :products
   resources :orders, only: [:index, :show, :create, :destroy]
   # Below line will map any request to get the about page to the about action of the simple_pages controller
