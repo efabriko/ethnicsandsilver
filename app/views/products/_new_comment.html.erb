@@ -1,0 +1,32 @@
+<% if signed_in? %>
+  <h4>Add a review:</h4>
+  <%= form_for([@product, @product.comments.build]) do |f| %>
+    <p>
+      <%= f.label :body, "Comments" %><br>
+      <%= f.text_area :body, class: "form-control" %>
+    </p>
+    <p>
+      <%= f.label :rating %><br>
+      <%= f.text_field :rating, class: "rating, form-control" %>
+    </p>
+
+    <p>
+      <div class="rating">Your rating: </div>
+    </p>
+
+    <p>
+      <%= f.submit "Submit" %>
+    </p>
+  <% end %>
+<% end %>
+
+<script>
+  $(document).on('turbolinks:load', function(){
+    $('.rating').raty({
+      starHalf: '<%= "#{image_path('star-half.png')}" %>',
+      starOff: '<%= "#{image_path('star-off.png')}" %>',
+      starOn: '<%= "#{image_path('star-on.png')}" %>',
+      scoreName: 'comment[rating]'
+    });
+  });
+</script>
