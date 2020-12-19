@@ -20,7 +20,9 @@
 
   <body>
     <nav class="navbar navbar-expand-sm navbar-light bg-light sticky-top">
-      <a class="navbar-brand" href="#">Ethnics &amp; Silver</a>
+      <div class="navbar-brand">
+        <%= link_to image_tag("logo_img.png", height: "30"), simple_pages_index_path, class: "img-fluid" %>
+      </div>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>

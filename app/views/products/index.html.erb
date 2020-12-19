@@ -3,19 +3,17 @@
   <h1>Products</h1>
 
   <div class="container-fluid">
-    <div class="row justify-content-md-center">
 
+    <div class="row justify-content-center">
       <%= render @products %>
-
     </div><!-- end row -->
-    <div class="row justify-content-md-center flickr_pagination">
+
+    <div class="row justify-content-center flickr_pagination">
       <%= will_paginate @products %>
     </div>
+
+    <br>
+    <%= link_to 'New Product', new_product_path %>
+
   </div><!-- end conatiner-fluid -->
-
-
-  <br>
-
-  <%= link_to 'New Product', new_product_path %>
-
 </section>

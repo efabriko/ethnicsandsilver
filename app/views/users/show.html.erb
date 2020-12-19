@@ -1,14 +1,35 @@
-<p id="notice"><%= notice %></p>
+<!-- User show section starts here -->
+<section class="container">
 
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
+  <div class="row">
+    <div class="col col-lg-2">
+      <strong>First name:</strong>
+    </div>
+    <div class="col col-lg-2">
+      <%= @user.first_name %>
+    </div>
+  </div>
 
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
+  <div class="row">
+    <div class="col col-lg-2">
+      <strong>Last name:</strong>
+    </div>
+    <div class="col col-lg-2">
+      <%= @user.last_name %>
+    </div>
+  </div>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
-<%= link_to 'Back', users_path %>
+  <div class="row">
+    <div class="col col-lg-2">
+      <strong>Email:</strong>
+    </div>
+    <div class="col col-lg-2">
+      <%= @user.email %>
+    </div>
+  </div>
+  <br>
+
+  <%= link_to 'Edit', edit_user_path(@user) %> |
+  <%= link_to 'Back', users_path %>
+
+</section>
