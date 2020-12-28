@@ -1,8 +1,10 @@
 require 'rails_helper'
 
 describe UsersController, type: :controller do
-  let(:user) { User.create!(email: 'peter@example.com', password: '1234567890') }
-  let(:user2) { User.create!(email: 'john@example.com', password: '1234567890') }
+  # let(:user) { User.create!(email: 'peter10@example.com', password: '1234567890') }
+  user = FactoryBot.create(:user)
+  # let(:user2) { User.create!(email: 'john@example.com', password: '1234567890') }
+  user2 = FactoryBot.create(:user)
 
   describe 'GET #show' do
     context "when a user in logged in" do

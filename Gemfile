@@ -49,6 +49,11 @@ group :development, :test do
   gem 'rspec-rails', '~> 4.0.1'
   # To allow functional tests
   gem 'rails-controller-testing'
+  # To generate data sets
+  gem 'factory_bot_rails', '~> 4.0'
+
+  # To clean test data base
+  gem 'database_cleaner'
 end
 
 group :development do
