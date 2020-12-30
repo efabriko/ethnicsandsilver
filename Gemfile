@@ -39,6 +39,8 @@ gem 'cancancan'
 # Ruby on Rails, Sinatra, Hanami::View, Merb, DataMapper and Sequel.
 gem 'will_paginate', '~> 3.1.0'
 
+# Stripe library provides convenient access to the Stripe API
+gem 'stripe'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

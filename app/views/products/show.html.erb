@@ -24,6 +24,11 @@
           <%= @product.price %> Euros
         </li>
         <li class="list-group-item">
+          <%= form_with(url: '/payments/create') do |form| %>
+            <%= render partial: "shared/stripe_checkout_button" %>
+          <% end %>
+        </li>
+        <li class="list-group-item">
           <strong>Image url:</strong>
           <%= @product.image_url %>
         </li>
