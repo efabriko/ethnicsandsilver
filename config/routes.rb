@@ -14,4 +14,6 @@ Rails.application.routes.draw do
   root 'simple_pages#landing_page'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   post 'simple_pages/thank_you'
+
+  post 'payments/create'
 end
