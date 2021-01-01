@@ -5,6 +5,7 @@ class ProductsController < ApplicationController
   # GET /products
   # GET /products.json
   def index
+    byebug
     if params[:q]
       search_term = params[:q]
       # @products = Product.search(search_term)
@@ -12,6 +13,7 @@ class ProductsController < ApplicationController
     else
       # @products = Product.all
       @products = Product.paginate(page: params[:page], per_page: 5)
+      logger.debug "Length of the Product table to be displayed: #{@products.length}"
     end
   end
 

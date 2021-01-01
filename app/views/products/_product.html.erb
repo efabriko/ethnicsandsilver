@@ -1,10 +1,10 @@
 <div class="col-sm-4 col-lg-2">
   <div class="card w-120">
     <%= image_tag(product.image_url, class: "img-fluid") unless product.image_url.nil? %>
-    <div class="card-body">
-      <h5 class="card-title"><%= product.name %></h5>
-      <p class="card-text"><%= product.description %></p>
-      <p class="card-text"><%= product.price %> Euros</p>
+    <div class="card-body"><% logger.debug "Product id: #{product.id}" %>
+      <h5 class="card-title"><%= product.name %></h5><% logger.debug "Product name: #{product.name}" %>
+      <p class="card-text"><%= product.description %></p><% logger.debug "Product description: #{product.description}" %>
+      <p class="card-text"><%= product.price %> Euros</p><% logger.debug "Product price: #{product.price}" %>
       <%= link_to 'Show', product %>
       <%= link_to 'Edit', edit_product_path(product) %>
       <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %>
