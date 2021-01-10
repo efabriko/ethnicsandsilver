@@ -25,6 +25,6 @@ require("packs/custom.js.erb")
 require("packs/jquery.raty.js")
 // Added below to allow compilation of test_wecome.js
 require("packs/test_welcome.js")
-require("packs/jquery.elevatezoom.js")
+require("packs/jquery.elevateZoom-3.0.8.min.js")
 
 // require("packs/site.js.erb")
