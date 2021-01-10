@@ -2,7 +2,7 @@
 <section class="container">
   <div class="row">
     <div class="card mx-auto" >
-      <%= image_tag(@product.image_url, class: "img-fluid") unless @product.image_url.nil? %>
+      <%= image_tag(@product.image_url, class: "img-fluid img-zoom", data_zoom_image: @product.image_url) unless @product.image_url.nil? %>
 
       <div class="card-body">
         <h5 class="card-title">
@@ -51,3 +51,13 @@
   </div>
 
 </section>
+
+<script>
+  $('.img-zoom').elevateZoom(
+    {
+    zoomType				: "inner",
+    cursor: "crosshair"
+    }
+
+  );
+</script>
