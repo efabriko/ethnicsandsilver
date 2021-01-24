@@ -71,12 +71,12 @@ group :development do
   gem 'sqlite3', '~> 1.4'
   # To check Ruby on Rails applications for security vulnerabilities
   gem 'brakeman'
-  # To use memcachier. Dalli is a Ruby memcache Client
-  gem 'dalli'
 end
 
 group :production do
   gem 'pg'
+  # To use memcachier. Dalli is a Ruby memcache Client
+  gem 'dalli'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
