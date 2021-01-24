@@ -1,54 +1,56 @@
 
 <section class="container">
   <div class="row">
-    <div class="card mx-auto col-md-4">
-      <div><%= image_tag(@product.image_url, class: "img-fluid img-responsive img-zoom", data_zoom_image: @product.image_url) unless @product.image_url.nil? %></div>
+    <% cache @product do %>
+      <div class="card mx-auto col-md-4">
+        <div><%= image_tag(@product.image_url, class: "img-fluid img-responsive img-zoom", data_zoom_image: @product.image_url) unless @product.image_url.nil? %></div>
 
-      <div class="card-body">
-        <h5 class="card-title">
-          <strong>Name:</strong>
-          <%= @product.name %>
-        </h5>
-        <p class="card-text">
-          <strong>Description:</strong>
-          <%= @product.description %>
-        </p>
+        <div class="card-body">
+          <h5 class="card-title">
+            <strong>Name:</strong>
+            <%= @product.name %>
+          </h5>
+          <p class="card-text">
+            <strong>Description:</strong>
+            <%= @product.description %>
+          </p>
+        </div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <strong>Average Rating: </strong>
+            <div class="rated" data-score="<%= @product.average_rating %>"></div>
+          </li>
+          <li class="list-group-item">
+            <strong>Price:</strong>
+            <%= @product.price %> Euros
+          </li>
+          <li class="list-group-item">
+            <%= form_with(url: '/payments/create') do |form| %>
+              <%= hidden_field_tag(:product_id, @product.id) %>
+              <%= render partial: "shared/stripe_checkout_button" %>
+            <% end %>
+          </li>
+          <li class="list-group-item">
+            <strong>Image url:</strong>
+            <%= @product.image_url %>
+          </li>
+          <li class="list-group-item">
+            <%= render 'new_comment' %>
+          </li>
+          <li class="list-group-item">
+            <%= render 'comments' %>
+            <div class="row justify-content-md-center flickr_pagination">
+              <%= will_paginate @comments %>
+            </div>
+          </li>
+        </ul>
+        <div class="card-body text-center">
+          <%= link_to 'Edit', edit_product_path(@product) %> |
+          <%= link_to 'Back', products_path %>
+        </div>
       </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">
-          <strong>Average Rating: </strong>
-          <div class="rated" data-score="<%= @product.average_rating %>"></div>
-        </li>
-        <li class="list-group-item">
-          <strong>Price:</strong>
-          <%= @product.price %> Euros
-        </li>
-        <li class="list-group-item">
-          <%= form_with(url: '/payments/create') do |form| %>
-            <%= hidden_field_tag(:product_id, @product.id) %>
-            <%= render partial: "shared/stripe_checkout_button" %>
-          <% end %>
-        </li>
-        <li class="list-group-item">
-          <strong>Image url:</strong>
-          <%= @product.image_url %>
-        </li>
-        <li class="list-group-item">
-          <%= render 'new_comment' %>
-        </li>
-        <li class="list-group-item">
-          <%= render 'comments' %>
-          <div class="row justify-content-md-center flickr_pagination">
-            <%= will_paginate @comments %>
-          </div>
-        </li>
-      </ul>
-      <div class="card-body text-center">
-        <%= link_to 'Edit', edit_product_path(@product) %> |
-        <%= link_to 'Back', products_path %>
-      </div>
-    </div>
-  </div>
+    <% end %>
+  </div><!-- end row -->
 
 </section>
 

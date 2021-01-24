@@ -70,6 +70,7 @@ GEM
     cancancan (1.17.0)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
+    dalli (2.7.11)
     database_cleaner (1.8.5)
     devise (4.7.3)
       bcrypt (~> 3.0)
@@ -229,6 +230,7 @@ DEPENDENCIES
   brakeman
   byebug
   cancancan
+  dalli
   database_cleaner
   devise
   factory_bot_rails (~> 4.0)

@@ -5,7 +5,9 @@
   <div class="container-fluid">
 
     <div class="row justify-content-center">
-      <%= render @products %>
+      <% cache @products do %>
+        <%= render @products %>
+      <% end %>
     </div><!-- end row -->
 
     <div class="row justify-content-center flickr_pagination">
